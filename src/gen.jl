@@ -1,4 +1,4 @@
-type Gen
+mutable struct Gen
     "bus number"
     GEN_BUS::Vector{Int64}
     "Pg, real power output (MW)"

@@ -1,4 +1,4 @@
-type Bus
+mutable struct Bus
     "bus number"
     BUS_I::Vector{Int64}
     "bus type"
