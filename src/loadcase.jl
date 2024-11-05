@@ -16,10 +16,10 @@ function loadcase(caseName::AbstractString; describe=true)
         p = caseName
         !isfile(p) && error("File not found.")
     else
-        throw("Can't find that case name") 
-        #s = joinpath(Pkg.dir(),"MatpowerCases","data")
-        #p = joinpath(s,"$(caseName).mat")
-        #!isfile(p) && error("No data for network \"$(caseName)\".\nUse casenames() to list all valid names.")
+        #throw("Can't find that case name") 
+        s = joinpath(kg.project().path,"MatpowerCases","data")
+        p = joinpath(s,"$(caseName).mat")
+        !isfile(p) && error("No data for network \"$(caseName)\".\nUse casenames() to list all valid names.")
     end
 
     mpc = matread(p)["mpc"]
@@ -37,7 +37,7 @@ Return an array containing all valid
 MatpowerCases case names.
 """
 function casenames()
-    s = joinpath(Pkg.project().path,"MatpowerCases","data")
+    s = joinpath(Pkg.project().path,"MatpowerCases.jl","data")
     names = readdir(s)
     [splitext(name)[1] for name in names]
 end
