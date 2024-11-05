@@ -1,4 +1,4 @@
-type Branch
+mutable struct Branch
     "f, from bus number"
     F_BUS::Vector{Int64}
     "t, to bus number"
