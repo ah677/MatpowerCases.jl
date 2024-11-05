@@ -1,4 +1,4 @@
-using Pkg
+#using Pkg
 using MAT
 
 """
@@ -17,7 +17,7 @@ function loadcase(caseName::AbstractString; describe=true)
         !isfile(p) && error("File not found.")
     else
         #throw("Can't find that case name") 
-        s = joinpath(Pkg.project().path,"MatpowerCases","data")
+        s = "/Users/arianah/Downloads/Research/MatpowerCases.jl/data"
         p = joinpath(s,"$(caseName).mat")
         !isfile(p) && error("No data for network \"$(caseName)\".\nUse casenames() to list all valid names.")
     end
@@ -37,7 +37,7 @@ Return an array containing all valid
 MatpowerCases case names.
 """
 function casenames()
-    s = joinpath(Pkg.project().path,"MatpowerCases.jl","data")
+    s = "/Users/arianah/Downloads/Research/MatpowerCases.jl/data"
     names = readdir(s)
     [splitext(name)[1] for name in names]
 end
