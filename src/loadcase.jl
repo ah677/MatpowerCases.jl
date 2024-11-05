@@ -1,8 +1,9 @@
+using Pkg
 using MAT
 
 """
     mpc = loadcase(caseName)
-    mpc = loadcase(fpath)
+    mpc = loadcase(fpath
 
 Return a Dict containing power system data in MATPOWER's format.
 Argument may be any of the names returned by casenames(), or a
