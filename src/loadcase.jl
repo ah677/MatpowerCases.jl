@@ -17,7 +17,7 @@ function loadcase(caseName::AbstractString; describe=true)
         !isfile(p) && error("File not found.")
     else
         #throw("Can't find that case name") 
-        s = joinpath(kg.project().path,"MatpowerCases","data")
+        s = joinpath(Pkg.project().path,"MatpowerCases","data")
         p = joinpath(s,"$(caseName).mat")
         !isfile(p) && error("No data for network \"$(caseName)\".\nUse casenames() to list all valid names.")
     end
