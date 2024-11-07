@@ -2,3 +2,7 @@ name = "MatpowerCases"
 uuid = "d4c4cc33-f999-79c9-976e-8700a841b28f"
 license = "MIT"
 version = "1.6.0"
+
+
+[deps]
+MAT = "23992714-dd62-5051-b70f-ba57cb901cac"
