@@ -1,5 +1,7 @@
 # MATPOWER transmission network data
 
+This is compatible with Julia Version 1.11.1
+
 ##### Release status
 [![MatpowerCases](http://pkg.julialang.org/badges/MatpowerCases_0.3.svg)](http://pkg.julialang.org/?pkg=MatpowerCases)
 [![MatpowerCases](http://pkg.julialang.org/badges/MatpowerCases_0.4.svg)](http://pkg.julialang.org/?pkg=MatpowerCases)
@@ -18,7 +20,8 @@ This package contains all transmission network data included in MATPOWER 5.1, pl
 To install:
 
 ```julia
-Pkg.add("MatpowerCases")
+import Pkg
+Pkg.add(url="https://github.com/ah677/MatpowerCases.jl")
 ```
 To load data for, say, the [IEEE 118-bus power flow test case][7]:
 
@@ -26,6 +29,7 @@ To load data for, say, the [IEEE 118-bus power flow test case][7]:
 using MatpowerCases
 mpc = loadcase("case118")
 ```
+
 You should see a one-line description of the network (unless you passed `describe=false` to `loadcase()`). Now `mpc` is a Dict containing network data in [MATPOWER caseformat][2]:
 
 ```julia
