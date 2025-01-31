@@ -63,7 +63,7 @@ OUT:
 * Instance of Gen containing all gen data.
 """
 function extract_gen(mpc)
-    gen = mpc["gen"]
+    gen = vcat(mpc["gen"])
     nc = size(gen, 2)
     nf = length(fieldnames(Gen))
     blanks = fill([NaN], nf - nc)
